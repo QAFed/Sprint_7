@@ -7,7 +7,7 @@ class GenCourierData:
         self.login = f"lgfedqa{self.gen_id}"
         self.password = f"pssfedqa{self.gen_id}"
         self.first_name = f"frnfedqa{self.gen_id}"
-
+        self.sidn_in_id = None
     def get_data_for_sign_up_courier(self):
         return {
             "login": self.login,
