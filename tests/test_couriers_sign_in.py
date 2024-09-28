@@ -14,6 +14,6 @@ class TestSignInCourier:
         courier_sign_in.check_status_code(200)
         print(courier_sign_up.payload)
         print(courier_sign_in.response.json())
-        courier_delete = CourierDelete()
-        courier_delete.request(courier_sign_in.response.json()["id"])
+        courier_delete = CourierDelete(courier_sign_in.response.json()["id"])
+        courier_delete.request()
         courier_delete.check_status_code(200)
