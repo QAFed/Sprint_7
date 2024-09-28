@@ -7,5 +7,5 @@ class TestAddCourier:
         gen_courier_data = GenCourierData()
         courier_sign_up = CourierSignUp(gen_courier_data.get_data_for_sign_up_courier())
         courier_sign_up.sign_up_request()
-        courier_sign_up.check_creation_status_code(201)
+        courier_sign_up.check_status_code(201)
         print(courier_sign_up.payload)
