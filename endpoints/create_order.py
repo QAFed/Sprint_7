@@ -2,9 +2,9 @@ import requests
 from main_data import Links
 
 
-class CourierSignIn:
+class OrderCreate:
     def __init__(self, payload):
-        self.endpoint = "/api/v1/courier/login"
+        self.endpoint = "/api/v1/orders"
         self.payload = payload
         self.response = None
 

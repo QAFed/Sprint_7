@@ -8,7 +8,7 @@ class CourierSignUp:
         self.payload = payload
         self.response = None
 
-    def sign_up_request(self):
+    def request(self):
         self.response = requests.post(Links.MAIN_URL+self.endpoint, json=self.payload)
 
     def check_status_code(self, status_code):

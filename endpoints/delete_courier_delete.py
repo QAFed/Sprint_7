@@ -7,7 +7,7 @@ class CourierDelete:
         self.endpoint = "/api/v1/courier/"
         self.response = None
 
-    def delete_request(self, id):
+    def request(self, id):
         self.response = requests.delete(Links.MAIN_URL+self.endpoint+f'{id}')
 
     def check_status_code(self, status_code):
