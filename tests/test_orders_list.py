@@ -1,4 +1,4 @@
-from endpoints.get_list_orders import GetOrdersList
+from endpoints.get_list_orders_get import GetOrdersList
 
 
 class TestOrdersList:

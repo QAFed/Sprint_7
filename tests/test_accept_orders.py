@@ -2,9 +2,9 @@ from helpers.generator import GenCourierData
 from helpers.generator import GenOrderData
 from endpoints.sign_up_courier_post import CourierSignUp
 from endpoints.sign_in_courier_post import CourierSignIn
-from endpoints.create_order import OrderCreate
-from endpoints.accept_orders import OrderAccept
-from endpoints.get_order_by_track import GetOrder
+from endpoints.create_order_post import OrderCreate
+from endpoints.accept_orders_put import OrderAccept
+from endpoints.get_order_by_track_get import GetOrder
 
 
 class TestAcceptOrder:
