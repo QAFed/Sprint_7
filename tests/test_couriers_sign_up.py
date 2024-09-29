@@ -9,6 +9,8 @@ class TestAddCourier:
         gen_courier_data = delete_courier_after
         courier_sign_up = CourierSignUp(gen_courier_data.get_data_for_sign_up_courier())
         courier_sign_up.request()
+        print(courier_sign_up.response.json())
+        print(courier_sign_up.response.status_code)
         courier_sign_up.check_status_code(201)
         courier_sign_up.check_response_json({
             "ok":True

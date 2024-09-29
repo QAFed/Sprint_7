@@ -1,9 +1,10 @@
+import random
 from datetime import datetime
 
 
 class GenCourierData:
     def __init__(self):
-        self.gen_id = datetime.now().strftime("%Y%m%d%H%M%S")
+        self.gen_id = datetime.now().strftime("%Y%m%d%H%M%S"+str(random.randint(1,99)))
         self.login = f"lgfedqa{self.gen_id}"
         self.password = f"pssfedqa{self.gen_id}"
         self.first_name = f"frnfedqa{self.gen_id}"
