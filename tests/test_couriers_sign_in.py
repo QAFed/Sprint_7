@@ -1,9 +1,5 @@
 import pytest
-
-from endpoints.sign_up_courier_post import CourierSignUp
 from endpoints.sign_in_courier_post import CourierSignIn
-from endpoints.delete_courier_delete import CourierDelete
-from helpers.generator import GenCourierData
 from copy import copy
 
 
@@ -23,7 +19,7 @@ class TestSignInCourier:
     def test_courier_not_sign_in_if_not_send_all_fields_are_required(self, kill_param, create_courier):
         gen_courier_data = create_courier
         mod_data = copy(gen_courier_data.get_data_for_sign_in_courier())
-        mod_data[kill_param]=""
+        mod_data[kill_param] = ""
         courier_sign_in = CourierSignIn(mod_data)
         courier_sign_in.request()
         courier_sign_in.check_status_code(400)
@@ -39,7 +35,7 @@ class TestSignInCourier:
     def test_courier_not_sign_in_if_not_correct_param(self, not_correct_param, create_courier):
         gen_courier_data = create_courier
         mod_data = copy(gen_courier_data.get_data_for_sign_in_courier())
-        mod_data[not_correct_param]="%%%%"
+        mod_data[not_correct_param] = "%%%%"
         courier_sign_in = CourierSignIn(mod_data)
         courier_sign_in.request()
         courier_sign_in.check_status_code(404)

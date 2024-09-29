@@ -7,6 +7,7 @@ class CourierSignIn:
         self.endpoint = "/api/v1/courier/login"
         self.payload = payload
         self.response = None
+
     def request(self):
         self.response = requests.post(Links.MAIN_URL+self.endpoint, json=self.payload)
 

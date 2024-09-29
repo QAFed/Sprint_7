@@ -9,11 +9,9 @@ class TestAddCourier:
         gen_courier_data = delete_courier_after
         courier_sign_up = CourierSignUp(gen_courier_data.get_data_for_sign_up_courier())
         courier_sign_up.request()
-        print(courier_sign_up.response.json())
-        print(courier_sign_up.response.status_code)
         courier_sign_up.check_status_code(201)
         courier_sign_up.check_response_json({
-            "ok":True
+            "ok": True
         })
 
     def test_courier_not_sign_up_second_with_same_data(self):
@@ -26,7 +24,8 @@ class TestAddCourier:
             "code": 409,
             "message": "Этот логин уже используется. Попробуйте другой."
         })
-    @pytest.mark.parametrize('kill_param',[
+
+    @pytest.mark.parametrize('kill_param', [
             "login",
             "password"
     ])
@@ -35,10 +34,8 @@ class TestAddCourier:
         mod_gen_data = copy(gen_courier_data.get_data_for_sign_up_courier())
         mod_gen_data.pop(kill_param, None)
         courier_sign_up = CourierSignUp(mod_gen_data)
-        print(mod_gen_data)
         courier_sign_up.request()
         courier_sign_up.check_status_code(400)
-        print(courier_sign_up.response.json())
         courier_sign_up.check_response_json({
             'code': 400,
             'message': 'Недостаточно данных для создания учетной записи'

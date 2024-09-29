@@ -4,11 +4,12 @@ from datetime import datetime
 
 class GenCourierData:
     def __init__(self):
-        self.gen_id = datetime.now().strftime("%Y%m%d%H%M%S"+str(random.randint(1,99)))
+        self.gen_id = datetime.now().strftime("%Y%m%d%H%M%S"+str(random.randint(1, 99)))
         self.login = f"lgfedqa{self.gen_id}"
         self.password = f"pssfedqa{self.gen_id}"
         self.first_name = f"frnfedqa{self.gen_id}"
         self.sidn_in_id = None
+
     def get_data_for_sign_up_courier(self):
         return {
             "login": self.login,
@@ -21,6 +22,7 @@ class GenCourierData:
             "login": self.login,
             "password": self.password
         }
+
 
 class GenOrderData:
 

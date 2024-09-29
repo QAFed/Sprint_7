@@ -3,10 +3,11 @@ from main_data import Links
 
 
 class CourierDelete:
-    def __init__(self, id):
+    def __init__(self, courier_id):
         self.endpoint = "/api/v1/courier/"
         self.response = None
-        self.id = id
+        self.id = courier_id
+
     def request(self):
         self.response = requests.delete(Links.MAIN_URL+self.endpoint+f'{self.id}')
 

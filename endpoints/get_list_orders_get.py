@@ -8,7 +8,8 @@ class GetOrdersList:
         self.response = None
         self.limit = None
         if limit:
-            self.limit=f'?{limit}'
+            self.limit = f'?{limit}'
+
     def request(self):
         self.response = requests.get(Links.MAIN_URL+self.endpoint+self.limit)
 
