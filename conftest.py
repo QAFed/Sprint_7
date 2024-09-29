@@ -53,3 +53,11 @@ def create_order():
     get_order = GetOrder(order_create.response.json()['track'])
     get_order.request()
     return get_order.response.json()["order"]["id"]
+
+
+@pytest.fixture
+def create_order_track():
+    gen_data = GenOrderData()
+    order_create = OrderCreate(gen_data.get_data_for_order())
+    order_create.request()
+    return order_create.response.json()['track']
